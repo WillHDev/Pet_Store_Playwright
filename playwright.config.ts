@@ -12,6 +12,7 @@ import { defineConfig, devices } from '@playwright/test';
  * See https://playwright.dev/docs/test-configuration.
  */
 export default defineConfig({
+  globalSetup: './global-setup',
   testDir: './tests',
   /* Run tests in files in parallel */
   fullyParallel: true,
@@ -29,6 +30,7 @@ export default defineConfig({
     // baseURL: 'http://127.0.0.1:3000',
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
+    storageState: './LoginAuth.json',
     trace: 'on-first-retry',
   },
 
